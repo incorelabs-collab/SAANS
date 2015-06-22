@@ -167,6 +167,9 @@ $(document).ready(function() {
                                                                     case "DOB":
                                                                         parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Date of Birth</h4><h5 class='infoTitleDetail'>"+val+"</h5></div><div class='col-xs-2 col-sm-1 pull-right'><span class='glyphicon glyphicon-gift Icon'></span></div></div>";
                                                                         break;
+                                                                    case "Father_Name":
+                                                                        parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Father's Name</h4><h5 class='infoTitleDetail'>"+val+"</h5></div></div>";
+                                                                        break;
                                                                     case "Email":
                                                                         parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Email</h4><h5 class='infoTitleDetail'>"+val+"</h5></div><div class='col-xs-2 col-sm-1 pull-right'><a data-container='body' data-toggle='popover' data-placement='left' data-content=\"<a href='mailto:"+val+"'><button class='btn btn-primary'>Compose</button></a>\" data-html='true'><span class='glyphicon glyphicon-envelope Icon'></span></a></div></div>";
                                                                         break;
@@ -179,15 +182,32 @@ $(document).ready(function() {
                                                                     case "Occupation":
                                                                         parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Occupation</h4><h5 class='infoTitleDetail'>"+val+"</h5></div><div class='col-xs-2 col-sm-1 pull-right'><span class='glyphicon glyphicon-briefcase Icon'></span></div></div>";
                                                                         break;
+                                                                    case "Native":
+                                                                        parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Native</h4><h5 class='infoTitleDetail'>"+val+"</h5></div><div class='col-xs-2 col-sm-1 pull-right'><span class='glyphicon glyphicon-map-marker Icon'></span></div></div>";
+                                                                        break;
+                                                                    case "Membership_ID":
+                                                                        parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Membership ID</h4><h5 class='infoTitleDetail'>"+val+"</h5></div><div class='col-xs-2 col-sm-1 pull-right'><span class='glyphicon glyphicon-credit-card Icon'></span></div></div>";
+                                                                        break;
+                                                                    case "Membership_Type":
+                                                                        parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Membership Type</h4><h5 class='infoTitleDetail'>"+val+"</h5></div><div class='col-xs-2 col-sm-1 pull-right'><span class='glyphicon glyphicon-credit-card Icon'></span></div></div>";
+                                                                        break;
                                                                     case "off_addr1":
                                                                         parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Office Address</h4><h5 class='infoTitleDetail'>"+val+"<br>";
                                                                         flag = true;
                                                                         break;
                                                                     case "off_addr_area":
                                                                         if(flag) {
-                                                                            parentBodyString += val +"<br>Chennai ";
+                                                                            parentBodyString += val +" ";
                                                                         } else {
-                                                                            parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Office Address</h4><h5 class='infoTitleDetail'>"+val+"<br>Chennai ";
+                                                                            parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Office Address</h4><h5 class='infoTitleDetail'>"+val+" ";
+                                                                            flag = true;
+                                                                        }
+                                                                        break;
+                                                                    case "off_city":
+                                                                        if(flag) {
+                                                                            parentBodyString += "<br>"+val+" ";
+                                                                        } else {
+                                                                            parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Residence Address</h4><h5 class='infoTitleDetail'>"+val+" ";
                                                                             flag = true;
                                                                         }
                                                                         break;
@@ -219,9 +239,17 @@ $(document).ready(function() {
                                                                         break;
                                                                     case "res_addr_area":
                                                                         if(flag) {
-                                                                            parentBodyString += val +"<br>Chennai ";
+                                                                            parentBodyString += val +" ";
                                                                         } else {
-                                                                            parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Residence Address</h4><h5 class='infoTitleDetail'>"+val+"<br>Chennai ";
+                                                                            parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Residence Address</h4><h5 class='infoTitleDetail'>"+val+" ";
+                                                                            flag = true;
+                                                                        }
+                                                                        break;
+                                                                    case "res_city":
+                                                                        if(flag) {
+                                                                            parentBodyString += "<br>"+val+" ";
+                                                                        } else {
+                                                                            parentBodyString += "<div class='row listItems'><div class='col-xs-10 col-sm-11 pull-left'><h4 class='infoTitleLabel'>Residence Address</h4><h5 class='infoTitleDetail'>"+val+" ";
                                                                             flag = true;
                                                                         }
                                                                         break;
